@@ -73,13 +73,17 @@ const postFields = groq`
   "author": author->{name, image},
   publishedAt,
   categories,
-  postType
+  postType,
+  body
 `
 
-export const postQuery = groq`
-*[_type == "post"] | order(publishedAt desc, _updatedAt desc) {
-  ${postFields}
-}`
+export async function getPosts() {
+  return client.fetch(
+    groq`*[_type == "post"]{
+      ${postFields}
+    } | order(publishedAt desc, _updatedAt desc)`
+  );
+}
 
 export async function getSinglePost(slug: string) {
   return client.fetch(

@@ -49,12 +49,6 @@ export default defineType({
       type: 'text',
     }),
     defineField({
-      name: 'categories',
-      title: 'Categories',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}],
-    }),
-    defineField({
       name: 'date',
       title: 'Date',
       type: 'datetime',

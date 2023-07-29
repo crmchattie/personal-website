@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import { getSinglePost } from "@/sanity/sanity.query";
 import type { PostType } from "@/types";
 import { PortableText } from "@portabletext/react";
+import styles from './page.module.css'
 import fallBackImage from "@/public/project.png";
 
 type Props = {
@@ -41,24 +42,24 @@ export default async function post({ params }: Props) {
             {post.title}
           </h1>
 
-          <a
+          {/* <a
             href={post.slug}
             rel="noreferrer noopener"
             className="bg-[#1d1d20] text-white hover:border-zinc-700 border border-transparent rounded-md px-4 py-2"
           >
             Explore
-          </a>
+          </a> */}
         </div>
 
-        <Image
+        {/* <Image
           className="rounded-xl border border-zinc-800"
           width={900}
           height={460}
           src={post.mainImage?.image || fallBackImage}
           alt={post.mainImage?.alt || post.title}
-        />
+        /> */}
 
-        <div className="flex flex-col gap-y-6 mt-8 leading-7 text-zinc-400">
+        <div className={`flex flex-col gap-y-6 mt-8 leading-7 text-zinc-400 ${styles.portableText}`}>
           <PortableText value={post.body} />
         </div>
       </div>
