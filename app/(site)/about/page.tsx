@@ -16,7 +16,7 @@ export default async function About() {
               <div className="order-2 lg:order-none">
                 <h1 className="lg:text-5xl text-4xl lg:leading-tight basis-1/2 font-bold mb-8">
                   I&apos;m {data.fullName}. I live in {data.location}, where I
-                  dream about the future.
+                  tinker with the future.
                 </h1>
 
                 <div className="flex flex-col gap-y-3 text-zinc-400 leading-relaxed">
